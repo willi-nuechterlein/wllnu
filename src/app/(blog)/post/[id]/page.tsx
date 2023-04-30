@@ -2,6 +2,8 @@ import { xata } from '@/lib/db/xata'
 
 import Header from '@/components/atoms/Header'
 
+export const revalidate = 60
+
 export default async function PostPage({
   params: { id }
 }: {
