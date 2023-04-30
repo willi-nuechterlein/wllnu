@@ -10,7 +10,7 @@ export enum PostTag {
 export interface Post {
   id: number
   title: string
-  shortDescription: string
+  description: string
   tags: Array<PostTag>
   content: string
   createdAt: Date
