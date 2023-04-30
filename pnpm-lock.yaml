@@ -2,8 +2,6 @@ lockfileVersion: 5.4
 
 specifiers:
   '@babel/core': ^7.21.5
-  '@radix-ui/colors': ^0.1.8
-  '@stitches/react': ^1.2.8
   '@types/node': 18.16.2
   '@types/react': 18.2.0
   '@types/react-dom': 18.2.1
@@ -28,8 +26,6 @@ specifiers:
 
 dependencies:
   '@babel/core': 7.21.5
-  '@radix-ui/colors': 0.1.8
-  '@stitches/react': 1.2.8_react@18.2.0
   '@types/node': 18.16.2
   '@types/react': 18.2.0
   '@types/react-dom': 18.2.1
@@ -477,20 +473,8 @@ packages:
       tslib: 2.5.0
     dev: false
 
-  /@radix-ui/colors/0.1.8:
-    resolution: {integrity: sha512-jwRMXYwC0hUo0mv6wGpuw254Pd9p/R6Td5xsRpOmaWkUHlooNWqVcadgyzlRumMq3xfOTXwJReU0Jv+EIy4Jbw==}
-    dev: false
-
   /@rushstack/eslint-patch/1.2.0:
     resolution: {integrity: sha512-sXo/qW2/pAcmT43VoRKOJbDOfV3cYpq3szSVfIThQXNt+E4DfKj361vaAt3c88U5tPUxzEswam7GW48PJqtKAg==}
-    dev: false
-
-  /@stitches/react/1.2.8_react@18.2.0:
-    resolution: {integrity: sha512-9g9dWI4gsSVe8bNLlb+lMkBYsnIKCZTmvqvDG+Avnn69XfmHZKiaMrx7cgTaddq7aTPPmXiTsbFcUy0xgI4+wA==}
-    peerDependencies:
-      react: '>= 16.3.0'
-    dependencies:
-      react: 18.2.0
     dev: false
 
   /@swc/helpers/0.5.1:
