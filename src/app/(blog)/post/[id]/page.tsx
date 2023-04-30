@@ -17,7 +17,7 @@ export default async function PostPage({
     <>
       <Header />
       <main>
-        <article className="">
+        <article>
           <h1 className="mb-2 text-lg font-medium">{post.title}</h1>
           <ul className="flex flex-wrap">
             {post.tags?.map((tag) => (
