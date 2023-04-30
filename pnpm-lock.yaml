@@ -16,6 +16,7 @@ specifiers:
   eslint-plugin-jsx-a11y: ^6.7.1
   eslint-plugin-react: ^7.32.2
   eslint-plugin-react-hooks: ^4.6.0
+  houseform: ^1.10.5
   next: 13.3.2
   postcss: ^8.4.23
   prettier: ^2.8.8
@@ -23,6 +24,7 @@ specifiers:
   react-dom: 18.2.0
   tailwindcss: ^3.3.2
   typescript: 5.0.4
+  zod: ^3.21.4
 
 dependencies:
   '@babel/core': 7.21.5
@@ -39,11 +41,13 @@ dependencies:
   eslint-plugin-jsx-a11y: 6.7.1_eslint@8.39.0
   eslint-plugin-react: 7.32.2_eslint@8.39.0
   eslint-plugin-react-hooks: 4.6.0_eslint@8.39.0
+  houseform: 1.10.5_react@18.2.0+zod@3.21.4
   next: 13.3.2_5lnmxaau2bs7vcvowl2iwadrxa
   prettier: 2.8.8
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   typescript: 5.0.4
+  zod: 3.21.4
 
 devDependencies:
   autoprefixer: 10.4.14_postcss@8.4.23
@@ -1714,6 +1718,16 @@ packages:
     dependencies:
       function-bind: 1.1.1
 
+  /houseform/1.10.5_react@18.2.0+zod@3.21.4:
+    resolution: {integrity: sha512-PeT2MOguJybHJe1bV3+MlJq3vEEfFF22dBErtT5A8lnLr4IYGBaTK4pbnoXdyVIwl6aGyj1gGpFZqDEeFf10bg==}
+    peerDependencies:
+      react: '>=16.8.0'
+      zod: '>=3.9.0'
+    dependencies:
+      react: 18.2.0
+      zod: 3.21.4
+    dev: false
+
   /ignore/5.2.4:
     resolution: {integrity: sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==}
     engines: {node: '>= 4'}
@@ -2889,4 +2903,8 @@ packages:
   /yocto-queue/0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+    dev: false
+
+  /zod/3.21.4:
+    resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
     dev: false

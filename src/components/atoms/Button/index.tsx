@@ -7,7 +7,7 @@ const Button = (props: ButtonHTMLAttributes<HTMLButtonElement>) => {
       type="button"
       {...props}
       className={classNames(
-        'text-slate-800 bg-gradient-to-b from-slate-50 via-slate-100 to-slate-200 font-normal rounded-lg text-sm px-4 py-1.5 text-center mr-2 mb-2 border border-slate-300 h-full',
+        'text-slate-800 bg-gradient-to-b from-slate-50 via-slate-100 to-slate-200 font-normal rounded-lg text-sm px-4 py-1.5 text-center border border-slate-300 h-full',
         props.className
       )}
     />
