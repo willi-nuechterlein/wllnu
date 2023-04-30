@@ -1,14 +1,15 @@
-import Header from '@/components/atoms/Header'
-import { POSTS } from '@/lib/mocks/posts'
+import { xata } from '@/lib/db/xata'
 
-export default function PostPage({
+import Header from '@/components/atoms/Header'
+
+export default async function PostPage({
   params: { id }
 }: {
   params: {
     id: string
   }
 }) {
-  const post = POSTS.find((post) => post.id === Number(id))
+  const post = await xata.db.posts.read(id)
   if (!post) {
     return <div>Post not found</div>
   }
@@ -19,7 +20,7 @@ export default function PostPage({
         <article className="">
           <h1 className="mb-2 text-lg font-medium">{post.title}</h1>
           <ul className="flex flex-wrap">
-            {post.tags.map((tag) => (
+            {post.tags?.map((tag) => (
               <li
                 key={tag}
                 className="px-2 py-1 mb-2 mr-2 text-xs border rounded-lg text-slate-600 border-slate-400"

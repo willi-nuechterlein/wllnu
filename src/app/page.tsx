@@ -1,18 +1,16 @@
-import Header from '@/components/atoms/Header'
-import { getXataClient } from '@/xata'
 import Link from 'next/link'
+import { xata } from '@/lib/db/xata'
+
+import Header from '@/components/atoms/Header'
 
 export default async function Home() {
-  const xata = getXataClient()
+  const posts = await xata.db.posts
+    .select(['id', 'title', 'description', 'tags'])
+    .getMany()
 
-  const posts = await xata.db.posts.getAll()
   return (
     <>
-      {/* <header>
-        <h1 className="mb-6 text-2xl font-medium">wllnu</h1>
-      </header> */}
       <Header />
-
       <main>
         <section className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           {posts.map(({ id, title, description, tags }) => (

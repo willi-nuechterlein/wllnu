@@ -53,3 +53,5 @@ export const getXataClient = () => {
   instance = new XataClient()
   return instance
 }
+
+export const xata = getXataClient()
