@@ -32,9 +32,12 @@ const PostsGrid = ({ posts }: PostsGridProps) => {
                   <Image
                     src={cover}
                     fill
+                    style={{ objectFit: 'cover' }}
                     alt={title + 'cover image'}
                     sizes="(max-width: 768px) 50vw,
                     (max-width: 1200px) 25vw"
+                    placeholder="blur"
+                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkiAYAAGEAXWDbSoIAAAAASUVORK5CYII="
                   />
                 </div>
               </figure>

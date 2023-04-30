@@ -35,17 +35,19 @@ const Header = ({
   }, [])
 
   return (
-    <header className="fixed top-0 z-10 flex items-center justify-between w-full h-20 max-w-4xl gap-2 mr-4 ">
+    <header className="fixed top-0 z-10 flex items-center justify-between w-full h-20 max-w-4xl">
       <div className="fixed w-[100vw] h-20 backdrop-blur-lg z-9 left-0" />
-      <h1
-        className={classNames(
-          `text-2xl relative font-semibold transition-all hidden sm:block`,
-          { 'opacity-100': !isScrolled },
-          { 'opacity-0': isScrolled }
-        )}
-      >
-        {title}
-      </h1>
+      <Link href="/">
+        <h1
+          className={classNames(
+            `text-2xl relative font-semibold transition-all hidden sm:block`,
+            { 'opacity-100': !isScrolled },
+            { 'opacity-0': isScrolled }
+          )}
+        >
+          {title}
+        </h1>
+      </Link>
       <ul
         className={classNames(
           'z-20 duration-300 ease-in-out space-x-4 flex transition-all',

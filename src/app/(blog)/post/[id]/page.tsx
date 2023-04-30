@@ -1,6 +1,7 @@
 import { xata } from '@/lib/db/xata'
 
 import Header from '@/components/atoms/Header'
+import Image from 'next/image'
 
 export const revalidate = 60
 
@@ -15,23 +16,29 @@ export default async function PostPage({
   if (!post) {
     return <div>Post not found</div>
   }
+
+  const { title, cover, tags } = post
   return (
     <>
-      <Header />
+      <Header tags={tags || undefined} />
       <main>
+        {cover ? (
+          <figure className="relative w-full h-56 mx-auto mb-8 overflow-hidden sm:w-3/4 rounded-xl">
+            <Image
+              src={cover}
+              fill
+              style={{ objectFit: 'cover' }}
+              alt={title + 'cover image'}
+              sizes="(max-width: 768px) 30vw,
+            (max-width: 1200px) 50vw"
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkiAYAAGEAXWDbSoIAAAAASUVORK5CYII="
+            />
+          </figure>
+        ) : null}
         <article>
-          <h1 className="mb-2 text-lg font-medium">{post.title}</h1>
-          <ul className="flex flex-wrap">
-            {post.tags?.map((tag) => (
-              <li
-                key={tag}
-                className="px-2 py-1 mb-2 mr-2 text-xs border rounded-lg text-slate-600 border-slate-400"
-              >
-                {tag}
-              </li>
-            ))}
-          </ul>
-          <p className="mb-2 text-sm text-slate-600">{post.content}</p>
+          <h1 className="mb-2 text-xl font-medium">{post.title}</h1>
+          <p className="text-sm text-slate-600">{post.content}</p>
         </article>
       </main>
     </>
