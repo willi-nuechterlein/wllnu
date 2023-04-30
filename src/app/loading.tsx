@@ -9,7 +9,7 @@ export default async function LoadingHome() {
           {Array.from({ length: 8 }).map((_, i) => (
             <div
               key={i}
-              className="w-full h-32 border rounded-lg border-slate-300 animate-pulse bg-slate-100"
+              className="w-full h-48 border rounded-lg border-slate-300 animate-pulse bg-slate-100"
             />
           ))}
         </section>

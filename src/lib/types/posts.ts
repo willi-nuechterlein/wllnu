@@ -10,5 +10,6 @@ export interface Post {
   description: string
   tags: Array<PostTag | string> | null
   content: string
+  cover: string | null
   createdAt: Date
 }

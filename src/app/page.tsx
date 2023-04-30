@@ -7,7 +7,7 @@ export const revalidate = 60
 export default async function Home() {
   // TODO: error handling
   const posts = await xata.db.posts
-    .select(['id', 'title', 'description', 'tags'])
+    .select(['id', 'title', 'description', 'tags', 'cover'])
     .getAll()
 
   return <GridPage posts={posts} />

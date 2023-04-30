@@ -18,7 +18,8 @@ const tables = [
       },
       { name: 'tags', type: 'multiple' },
       { name: 'content', type: 'text' },
-      { name: 'embedding', type: 'vector', vector: { dimension: 1536 } }
+      { name: 'embedding', type: 'vector', vector: { dimension: 1536 } },
+      { name: 'cover', type: 'string' }
     ]
   }
 ] as const
