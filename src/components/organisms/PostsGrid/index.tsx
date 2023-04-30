@@ -14,8 +14,8 @@ const PostsGrid = ({ posts }: PostsGridProps) => {
       {posts.map(({ id, title, description, tags, cover }) => (
         <Link href={`/post/${id}`} key={id}>
           <article className="group relative p-6 border rounded-xl border-slate-300 hover:cursor-pointer hover:border-slate-400 hover:scale-[1.01] h-48 flex">
-            <section className="flex flex-col justify-between h-full z-1">
-              <div>
+            <section className="flex flex-col justify-between w-3/4 h-full z-1">
+              <div className="max-h-32 overflow-clip">
                 <h1 className="mb-2 text-lg font-medium">{title}</h1>
                 <p className="mb-2 text-sm text-slate-500">{description}</p>
               </div>
@@ -26,9 +26,9 @@ const PostsGrid = ({ posts }: PostsGridProps) => {
               </ul>
             </section>
             {cover ? (
-              <figure className="absolute top-0 right-0 w-3/5 h-full overflow-hidden rounded-r-xl -z-30">
+              <figure className="absolute top-0 right-0 w-1/2 h-full overflow-hidden rounded-r-xl -z-30">
                 <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-slate-50 to-transparent -z-10" />
-                <div className="relative w-full h-full -z-20 blur-sm group-hover:blur-none">
+                <div className="relative w-full h-full -z-20 blur-sm group-hover:blur-none saturate-50 group-hover:saturate-100">
                   <Image
                     src={cover}
                     fill
