@@ -9,6 +9,7 @@ interface PostForm {
   description: string
   tags: string
   content: string
+  cover: string
 }
 
 export default async function PublishPage() {
@@ -112,6 +113,36 @@ export default async function PublishPage() {
                     onBlur={onBlur}
                     onChange={(e) => setValue(e.target.value)}
                     placeholder={'Tags'}
+                  />
+                  {errors.map((error) => (
+                    <p key={error} className="text-sm text-red-500">
+                      {error}
+                    </p>
+                  ))}
+                </div>
+              )
+            }}
+          </Field>
+          <Field<PostForm['cover']>
+            name="cover"
+            onBlurValidate={z
+              .string()
+              .min(5, 'Must be at least 5 characters long')}
+          >
+            {({ value, setValue, onBlur, errors }) => {
+              return (
+                <div className="flex flex-col gap-1 ">
+                  <label htmlFor="cover" className="text-sm text-gray-600 ">
+                    Cover
+                  </label>
+                  <input
+                    className="p-1.5 border border-gray-300 rounded-md"
+                    value={value}
+                    onBlur={onBlur}
+                    onChange={(e) => setValue(e.target.value)}
+                    placeholder={
+                      'https://images.unsplash.com/photo-1682552....'
+                    }
                   />
                   {errors.map((error) => (
                     <p key={error} className="text-sm text-red-500">
