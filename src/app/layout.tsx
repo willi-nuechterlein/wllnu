@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html>
       <body className={classNames(inter.className, 'bg-slate-50')}>
-        <div className="max-w-4xl p-4 mx-auto">{children}</div>
+        <div className="max-w-4xl p-4 mx-auto mt-20">{children}</div>
       </body>
     </html>
   )

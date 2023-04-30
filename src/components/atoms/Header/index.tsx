@@ -9,18 +9,18 @@ import Button from '../Button'
 import Badge from '../Badge'
 
 interface HeaderProps {
-  title: string
+  title?: string
   tags?: Array<string>
 }
 
 const Header = ({
-  title = 'Title',
+  title = 'wllnu',
   tags = Object.keys(PostTag).map((t) => t.toLowerCase())
 }: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false)
   const router = useRouter()
   const pathname = usePathname()
-  const isNotRoot = pathname !== '/'
+  const isRoot = pathname === '/'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,13 +35,21 @@ const Header = ({
   }, [])
 
   return (
-    <header className="flex items-center justify-between mb-4">
-      <h1 className={`p-4 text-2xl relative z-10 font-semibold`}>{title}</h1>
+    <header className="fixed top-0 z-10 flex items-center justify-between w-full h-20 max-w-4xl gap-2 mr-4 ">
+      <div className="fixed w-[100vw] h-20 backdrop-blur-lg z-9 left-0" />
+      <h1
+        className={classNames(
+          `text-2xl relative font-semibold transition-all hidden sm:block`,
+          { 'opacity-100': !isScrolled },
+          { 'opacity-0': isScrolled }
+        )}
+      >
+        {title}
+      </h1>
       <ul
         className={classNames(
-          `fixed top-0 z-20 p-8 transition-all duration-300 ease-in-out flex space-x-4 `,
-          { 'left-0': isScrolled },
-          { 'left-1/2 -translate-x-1/2': !isScrolled }
+          'z-20 duration-300 ease-in-out space-x-4 flex transition-all',
+          { 'left-0 absolute sm:left-auto sm:relative': isScrolled }
         )}
       >
         {tags.map((tag) => (
@@ -50,7 +58,9 @@ const Header = ({
           </Link>
         ))}
       </ul>
-      {isNotRoot ? <Button onClick={() => router.back()}>Back</Button> : null}
+      <div className="z-10 w-16 h-8">
+        {!isRoot ? <Button onClick={() => router.back()}>Back</Button> : null}
+      </div>
     </header>
   )
 }

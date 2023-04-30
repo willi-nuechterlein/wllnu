@@ -1,10 +1,7 @@
 export enum PostTag {
   WWW = 'www',
   Code = 'code',
-  Photography = 'photography',
-  Travel = 'travel',
-  Life = 'life',
-  Other = 'other'
+  Photography = 'photography'
 }
 
 export interface Post {
