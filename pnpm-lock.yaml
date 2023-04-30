@@ -7,6 +7,7 @@ specifiers:
   '@types/node': 18.16.2
   '@types/react': 18.2.0
   '@types/react-dom': 18.2.1
+  '@xata.io/client': ^0.23.5
   autoprefixer: ^10.4.14
   classnames: ^2.3.2
   eslint: 8.39.0
@@ -30,6 +31,7 @@ dependencies:
   '@types/node': 18.16.2
   '@types/react': 18.2.0
   '@types/react-dom': 18.2.1
+  '@xata.io/client': 0.23.5_typescript@5.0.4
   classnames: 2.3.2
   eslint: 8.39.0
   eslint-config-next: 13.3.1_iacogk7kkaymxepzhgcbytyi7q
@@ -583,6 +585,14 @@ packages:
     dependencies:
       '@typescript-eslint/types': 5.59.1
       eslint-visitor-keys: 3.4.0
+    dev: false
+
+  /@xata.io/client/0.23.5_typescript@5.0.4:
+    resolution: {integrity: sha512-xNi6eLW6kXi6Ka8Q/TD/4+uGsfAUQ/Mna4CrPZGEQmPHRCqcwuSyaixPcJIaEO0mYfFGFjn5iUyvc4PLQ0rtiw==}
+    peerDependencies:
+      typescript: '>=4.5'
+    dependencies:
+      typescript: 5.0.4
     dev: false
 
   /acorn-jsx/5.3.2_acorn@8.8.2:
