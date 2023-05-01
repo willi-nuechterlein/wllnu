@@ -13,7 +13,7 @@ const PostsGrid = ({ posts }: PostsGridProps) => {
     <section className="grid grid-cols-1 gap-4 sm:grid-cols-2">
       {posts.map(({ id, title, description, tags, cover }) => (
         <Link href={`/post/${id}`} key={id}>
-          <article className="group relative p-6 border rounded-xl border-slate-300 hover:cursor-pointer hover:border-slate-400 hover:scale-[1.01] h-48 flex">
+          <article className="relative flex h-48 p-6 border group rounded-xl border-slate-300 hover:cursor-pointer hover:border-slate-400">
             <section className="flex flex-col justify-between w-3/4 h-full z-1">
               <div className="max-h-32 overflow-clip">
                 <h1 className="mb-2 text-lg font-medium">{title}</h1>
@@ -21,7 +21,7 @@ const PostsGrid = ({ posts }: PostsGridProps) => {
               </div>
               <ul className="flex flex-wrap gap-2 mt-4">
                 {tags?.map((tag) => (
-                  <Badge key={tag} tag={tag} size="xs" />
+                  <Badge key={tag} tag={tag} />
                 ))}
               </ul>
             </section>

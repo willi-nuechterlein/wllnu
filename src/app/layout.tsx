@@ -1,6 +1,7 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import classNames from 'classnames'
+import UnderConstruction from '@/components/atoms/UnderConstruction'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,6 +18,7 @@ export default function RootLayout({
     <html>
       <body className={classNames(inter.className, 'bg-slate-50')}>
         <div className="max-w-4xl p-4 mx-auto mt-20">{children}</div>
+        <UnderConstruction />
       </body>
     </html>
   )
