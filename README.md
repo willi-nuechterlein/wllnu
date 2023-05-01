@@ -4,10 +4,10 @@ This project is a personal blog template built with Next.js 13 and styled using 
 
 ## Features
 
-- Next.js 13 app directory
+- Next.js 13 app router
 - xata.io for data storage and vector search functionality
 - WIP: publish form for blog entries
 
-## Upcoming Features
+## Upcoming
 
 - Chatbot for asking questions about the blog
